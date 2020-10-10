@@ -12,9 +12,13 @@ using namespace std;
 
 int main() {
     BST<int> diego;
-    diego.insert(4);
+    diego.insert(9);
+    diego.insert(7);
+    diego.insert(11);
     diego.insert(6);
-    diego.insert(2);
+    diego.insert(8);
+    diego.print();
+    diego.removeElement(6);
     diego.print();
     return 0;
 }
