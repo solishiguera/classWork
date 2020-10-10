@@ -20,6 +20,7 @@ public:
     bool isEmpty();
     void printTree(Node<T>* aux, int level);
     void print();
+    void removeElement(T data);
 };
 
 template<class T>
