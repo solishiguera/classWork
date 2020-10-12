@@ -14,17 +14,33 @@ class BST {
 private:
     Node<T>* root;
     int howManyChilds(Node<T>* aux);
+    void printTree(Node<T>* aux, int level);
     int size = 0;
 public:
     BST() {root = NULL;}
     void insert(T data);
     bool isEmpty();
-    void printTree(Node<T>* aux, int level);
     void print();
     void removeElement(T data);
-    void visit(int opcion);
+    bool find(T data);
+    //void visit(int opcion);
 };
 
+template<class T>
+bool BST<T>::find(T data) {
+    Node<T>* aux = root;
+    while (aux-> data != data) {
+        data >= aux->data ? aux = aux->right : aux = aux ->left;
+    }
+    
+    if (aux-> data == data) {
+        return true;
+    }
+    
+    throw out_of_range("No se encontró el dato ingresado");
+}
+
+/*
 template<class T>
 void BST<T>::visit(int opcion) {
     switch (opcion) {
@@ -46,6 +62,7 @@ void BST<T>::visit(int opcion) {
             break;
     }
 }
+*/
 
 template<class T>
 int BST<T>::howManyChilds(Node<T>* aux) {
