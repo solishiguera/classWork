@@ -19,6 +19,9 @@ int main() {
     diego.insert(8);
     diego.insert(13);
     diego.print();
+    
+    diego.removeElement(6);
+    diego.print();
     cout << diego.find(7) << endl;
     return 0;
 }

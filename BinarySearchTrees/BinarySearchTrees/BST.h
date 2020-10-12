@@ -124,8 +124,83 @@ void BST<T>::print() {
 
 template<class T>
 void BST<T>::removeElement(T data) {
-    Node<T>* aux = root;
-    Node<T>* auxDos = aux;
+    
+    if (!isEmpty()) {
+        Node<T>* father = root;
+        Node<T>* aux = father;
+        bool found = false;
+        while (!found && aux != NULL) {
+            if (aux-> data == data) {
+                found = true;
+            } else {
+                father = aux;
+                data < aux-> data ? aux = aux-> left : aux = aux-> right;
+            }
+        }
+        
+        if (found) {
+            switch (howManyChilds(aux)) {
+                case 0: {
+                    if (aux == root) {
+                        delete aux;
+                        root = NULL;
+                    } else {
+                        data < father-> data ? father-> left = NULL : father-> right = NULL;
+                        delete aux;
+                    }
+                    break;
+                }
+                
+                case 1: {
+                    if(aux == root) {
+                        root-> left != NULL ? root = root-> left : root = root-> right;
+                    } else {
+                        if (data < father-> data) {
+                            aux-> left != NULL ? father-> left = aux-> left : father-> left = aux-> right;
+                        } else {
+                            aux -> left != NULL ? father-> right = aux-> left : father-> right = aux-> right;
+                        }
+                    }
+                    delete aux;
+                    break;
+                }
+                    
+                case 2: {
+                    Node<T>* father = aux;
+                    Node<T>* max = aux-> left;
+                    if (max-> right == NULL) {
+                        aux-> data = max-> data;
+                        father-> left = max-> left;
+                        delete max;
+                    } else {
+                        bool found = false;
+                        while (!found) {
+                            if (max-> right == NULL) {
+                                found = true;
+                            } else {
+                                father = max;
+                                max = max-> right;
+                            }
+                        }
+                        aux-> data = max-> data;
+                        father-> right = max-> left;
+                        delete max;
+                    }
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    /*
     bool isOnRight = false;
     
     if(root-> data == data) {
@@ -159,6 +234,7 @@ void BST<T>::removeElement(T data) {
         return;
     }
     throw runtime_error("No se encontró el dato buscado");
+    */
 }
 
 template<class T>
