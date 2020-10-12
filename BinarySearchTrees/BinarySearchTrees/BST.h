@@ -22,7 +22,30 @@ public:
     void printTree(Node<T>* aux, int level);
     void print();
     void removeElement(T data);
+    void visit(int opcion);
 };
+
+template<class T>
+void BST<T>::visit(int opcion) {
+    switch (opcion) {
+        case 1: {
+            // Preorder
+            break;
+        }
+        case 2: {
+            break;
+        }
+        case 3: {
+            break;
+        }
+        case 4: {
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
 
 template<class T>
 int BST<T>::howManyChilds(Node<T>* aux) {
@@ -87,7 +110,6 @@ void BST<T>::removeElement(T data) {
     Node<T>* aux = root;
     Node<T>* auxDos = aux;
     bool isOnRight = false;
-    bool found = false;
     
     if(root-> data == data) {
         root = NULL;
@@ -99,14 +121,12 @@ void BST<T>::removeElement(T data) {
             if (aux->left->data == data) {
                 auxDos = aux;
                 isOnRight = false;
-                found = true;
             }
             aux = aux->left;
         } else {
             if (aux->right->data == data) {
                 auxDos = aux;
                 isOnRight = true;
-                found = true; 
             }
             aux = aux-> right;
         }
@@ -115,13 +135,13 @@ void BST<T>::removeElement(T data) {
     if (isOnRight) {
         auxDos->right = NULL;
         delete aux;
+        return;
     } else {
         auxDos->left = NULL;
         delete aux;
+        return;
     }
-    if (!found) {
-        throw runtime_error("No se encontró el dato buscado");
-    }
+    throw runtime_error("No se encontró el dato buscado");
 }
 
 template<class T>

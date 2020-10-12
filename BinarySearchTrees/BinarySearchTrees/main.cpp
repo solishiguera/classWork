@@ -17,8 +17,9 @@ int main() {
     diego.insert(11);
     diego.insert(6);
     diego.insert(8);
+    diego.insert(13);
     diego.print();
-    diego.removeElement(6);
+    diego.removeElement(11);
     diego.print();
     return 0;
 }
