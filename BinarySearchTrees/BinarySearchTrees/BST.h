@@ -29,7 +29,7 @@ public:
 template<class T>
 bool BST<T>::find(T data) {
     Node<T>* aux = root;
-    while (aux-> data != data) {
+    while (aux->data != data) {
         data >= aux->data ? aux = aux->right : aux = aux ->left;
     }
     
@@ -133,7 +133,11 @@ void BST<T>::removeElement(T data) {
                 found = true;
             } else {
                 father = aux;
-                data < aux-> data ? aux = aux-> left : aux = aux-> right;
+                if (data < aux-> data) {
+                    aux = aux-> left;
+                } else {
+                    aux = aux-> right;
+                }
             }
         }
         
