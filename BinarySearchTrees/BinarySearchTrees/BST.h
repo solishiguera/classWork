@@ -41,28 +41,28 @@ bool BST<T>::find(T data) {
 }
 
 /*
-template<class T>
-void BST<T>::visit(int opcion) {
-    switch (opcion) {
-        case 1: {
-            // Preorder
-            break;
-        }
-        case 2: {
-            break;
-        }
-        case 3: {
-            break;
-        }
-        case 4: {
-            break;
-        }
-            
-        default:
-            break;
-    }
-}
-*/
+ template<class T>
+ void BST<T>::visit(int opcion) {
+ switch (opcion) {
+ case 1: {
+ // Preorder
+ break;
+ }
+ case 2: {
+ break;
+ }
+ case 3: {
+ break;
+ }
+ case 4: {
+ break;
+ }
+ 
+ default:
+ break;
+ }
+ }
+ */
 
 template<class T>
 int BST<T>::howManyChilds(Node<T>* aux) {
@@ -124,13 +124,12 @@ void BST<T>::print() {
 
 template<class T>
 void BST<T>::removeElement(T data) {
-    
     if (!isEmpty()) {
         Node<T>* father = root;
         Node<T>* aux = father;
         bool found = false;
         while (!found && aux != NULL) {
-            if (aux-> data == data) {
+            if (data == aux-> data) {
                 found = true;
             } else {
                 father = aux;
@@ -148,9 +147,9 @@ void BST<T>::removeElement(T data) {
                         data < father-> data ? father-> left = NULL : father-> right = NULL;
                         delete aux;
                     }
-                    break;
                 }
-                
+                    
+                    break;
                 case 1: {
                     if(aux == root) {
                         root-> left != NULL ? root = root-> left : root = root-> right;
@@ -162,12 +161,13 @@ void BST<T>::removeElement(T data) {
                         }
                     }
                     delete aux;
-                    break;
                 }
                     
+                    break;
                 case 2: {
                     Node<T>* father = aux;
                     Node<T>* max = aux-> left;
+                    
                     if (max-> right == NULL) {
                         aux-> data = max-> data;
                         father-> left = max-> left;
@@ -186,8 +186,9 @@ void BST<T>::removeElement(T data) {
                         father-> right = max-> left;
                         delete max;
                     }
-                    break;
                 }
+                    
+                    break;
                 default: {
                     break;
                 }
@@ -195,46 +196,42 @@ void BST<T>::removeElement(T data) {
         }
         
     }
-    
-    
-    
-    
-    
+
     /*
-    bool isOnRight = false;
-    
-    if(root-> data == data) {
-        root = NULL;
-    }
-    
-    // Esto en teoría resuelve parte uno
-    while (aux->data != data) {
-        if (data < aux->data) {
-            if (aux->left->data == data) {
-                auxDos = aux;
-                isOnRight = false;
-            }
-            aux = aux->left;
-        } else {
-            if (aux->right->data == data) {
-                auxDos = aux;
-                isOnRight = true;
-            }
-            aux = aux-> right;
-        }
-    }
-    
-    if (isOnRight) {
-        auxDos->right = NULL;
-        delete aux;
-        return;
-    } else {
-        auxDos->left = NULL;
-        delete aux;
-        return;
-    }
-    throw runtime_error("No se encontró el dato buscado");
-    */
+     bool isOnRight = false;
+     
+     if(root-> data == data) {
+     root = NULL;
+     }
+     
+     // Esto en teoría resuelve parte uno
+     while (aux->data != data) {
+     if (data < aux->data) {
+     if (aux->left->data == data) {
+     auxDos = aux;
+     isOnRight = false;
+     }
+     aux = aux->left;
+     } else {
+     if (aux->right->data == data) {
+     auxDos = aux;
+     isOnRight = true;
+     }
+     aux = aux-> right;
+     }
+     }
+     
+     if (isOnRight) {
+     auxDos->right = NULL;
+     delete aux;
+     return;
+     } else {
+     auxDos->left = NULL;
+     delete aux;
+     return;
+     }
+     throw runtime_error("No se encontró el dato buscado");
+     */
 }
 
 template<class T>
