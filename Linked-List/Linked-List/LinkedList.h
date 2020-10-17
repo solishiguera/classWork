@@ -13,21 +13,32 @@ template <class T>
 class LinkedList {
 private:
     Node<T>* head;
-    int size;
+    int size = 0;
     bool isEmpty();
     void merge(int ini, int mid, int fin);
     void mergeSort(int inicio, int fin);
 public:
-    void addFirst(T data);
-    void addLast(T data);
-    bool deleteData(T data);
-    void deleteAt(int index);
-    T getData(int index); // Use exceptions
-    void updateAt(int index, T newData); // Use exceptions
+    void addFirst(T data);                                      // Funciona
+    void addLast(T data);                                       // Funciona
+    bool deleteData(T data);                                    // Funciona
+    void deleteAt(int index);                                   // Funciona
+    T getData(int index); // Use exceptions                     // Funciona
+    void updateAt(int index, T newData); // Use exceptions      //
     void updateData(T data, T newData); // Use exceptions
     int findData(T data); // Use exceptions?
-    void sort();
+    void sort(); // Revisar
+    void printElements(); 
 };
+
+template <class T>
+void LinkedList<T>::printElements() {
+    Node<T>* aux = head;
+    for (int i = 0; i < size; i++) {
+        cout << aux->data << " ";
+        aux = aux->next;
+    }
+    cout << endl;
+}
 
 template <class T>
 bool LinkedList<T>::isEmpty() {
@@ -86,21 +97,31 @@ bool LinkedList<T>::deleteData(T data) {
 
 template <class T>
 void LinkedList<T>::deleteAt(int index) {
-    if(index >= 1 && index <= size) {
-        Node<T>* aux = head-> next;
-        Node<T>* prev = head;
-        int i = 0;
-        while(aux != NULL) {
-            if(i == index) {
-                prev = aux -> next;
-                delete aux;
-                size--;
-                return;
-            }
-            prev = aux;
-            aux = aux-> next;
-            i++;
-        }
+    if(index < 1 || index > size) {
+        throw out_of_range("Posición no es válida");
+    }
+    
+    Node<T>* aux = head;
+    int cont = 2;
+    
+    if (index == 1) {
+        head = aux-> next;
+        delete aux;
+        size --;
+        return;
+    }
+    
+    while (cont < index && aux-> next != NULL) {
+        aux = aux-> next;
+        cont++;
+    }
+    
+    if(cont == index && aux-> next != NULL){
+        Node<T>* newAux = aux-> next;
+        aux-> next = newAux-> next;
+        delete newAux;
+        size--;
+        return;
     }
 }
 
@@ -123,20 +144,16 @@ T LinkedList<T>::getData(int index) {
 // NO SE SI YA ESTA COMPLETO
 template <class T>
 void LinkedList<T>::updateAt(int index, T newData) {
-    if(index >= 1 && index <= size) {
+    if (!isEmpty()) {
         Node<T>* aux = head;
-        int i = 0;
-        while(aux != NULL) {
-            if(i == index) {
-                aux->data = newData;
-                return;
-            }
+        int cont = 0;
+        while (cont != index && aux-> next != NULL) {
             aux = aux-> next;
-            i++;
         }
+        aux->data = newData;
+        return; 
     }
-    
-    throw out_of_range("Posición inválida");
+    throw out_of_range("Position invalid");
 }
 
 
@@ -200,7 +217,7 @@ void LinkedList<T>::merge(int ini, int mid, int fin) {
     pos = ini;
     
     while(i < f1 && j < f2) {
-        if((listaL.front()).key() <= (listaR.front()).key()) {
+        if(listaL.front() <= listaR.front()) {
             updateAt(pos, listaL.dequeue());
             i++;
         } else {

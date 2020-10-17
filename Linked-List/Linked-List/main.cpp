@@ -15,8 +15,16 @@ Git
 cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork
 */
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    LinkedList<int> myList;
+    myList.addLast(4);
+    myList.addLast(3);
+    myList.addLast(7);
+    myList.addLast(1);
+    myList.addLast(2);
+    myList.addFirst(12);
+    myList.printElements();
+    myList.printElements();
+    
     return 0;
 }
