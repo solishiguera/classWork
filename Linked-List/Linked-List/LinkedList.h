@@ -18,16 +18,16 @@ private:
     void merge(int ini, int mid, int fin);
     void mergeSort(int inicio, int fin);
 public:
-    void addFirst(T data);                                      // Funciona
-    void addLast(T data);                                       // Funciona
-    bool deleteData(T data);                                    // Funciona
-    void deleteAt(int index);                                   // Funciona
-    T getData(int index); // Use exceptions                     // Funciona
-    void updateAt(int index, T newData); // Use exceptions      //
+    void addFirst(T data);
+    void addLast(T data);
+    bool deleteData(T data);
+    void deleteAt(int index);
+    T getData(int index); // Use exceptions
+    void updateAt(int index, T newData); // Use exceptions
     void updateData(T data, T newData); // Use exceptions
     int findData(T data); // Use exceptions?
-    void sort(); // Revisar
-    void printElements(); 
+    void sort();
+    void printElements();
 };
 
 template <class T>
@@ -141,14 +141,14 @@ T LinkedList<T>::getData(int index) {
     throw out_of_range("Posición inválida.");
 }
 
-// NO SE SI YA ESTA COMPLETO
 template <class T>
 void LinkedList<T>::updateAt(int index, T newData) {
     if (!isEmpty()) {
         Node<T>* aux = head;
-        int cont = 0;
+        int cont = 1;
         while (cont != index && aux-> next != NULL) {
             aux = aux-> next;
+            cont++;
         }
         aux->data = newData;
         return; 
@@ -157,20 +157,27 @@ void LinkedList<T>::updateAt(int index, T newData) {
 }
 
 
-// TERMINAR
 template <class T>
 void LinkedList<T>::updateData(T data, T newData) {
+    Node<T>* aux = head;
+    while (aux-> data != data && aux->next != NULL) {
+        aux = aux-> next;
+    }
     
+    if (aux-> data == data) {
+        aux-> data = newData;
+        return;
+    } else {
+        throw out_of_range("No se encontró el dato");
+    }
 }
 
-// TERMINAR
 template <class T>
 int LinkedList<T>::findData(T data) {
     int posI = 1;
     int posF = size;
     int posM = (posI + posF)  / 2;
     bool found = false;
-    //sort();
     while(posI <= posF && !found) {
         if(data < getData(posM)) {
             posF = posM - 1;

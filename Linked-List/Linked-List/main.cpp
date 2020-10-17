@@ -23,8 +23,11 @@ int main() {
     myList.addLast(1);
     myList.addLast(2);
     myList.addFirst(12);
+    myList.sort();
     myList.printElements();
-    myList.printElements();
+    int num = myList.findData(1);
+    cout << num << endl;
+    //myList.printElements();
     
     return 0;
 }
