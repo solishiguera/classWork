@@ -16,18 +16,6 @@ cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork
 */
 
 int main() {
-    LinkedList<int> myList;
-    myList.addLast(4);
-    myList.addLast(3);
-    myList.addLast(7);
-    myList.addLast(1);
-    myList.addLast(2);
-    myList.addFirst(12);
-    myList.sort();
-    myList.printElements();
-    int num = myList.findData(1);
-    cout << num << endl;
-    //myList.printElements();
     
     return 0;
 }

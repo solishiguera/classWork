@@ -25,10 +25,39 @@ public:
     T getData(int index); // Use exceptions
     void updateAt(int index, T newData); // Use exceptions
     void updateData(T data, T newData); // Use exceptions
-    int findData(T data); // Use exceptions?
+    int findData(T data); // Use exceptions
     void sort();
     void printElements();
+    void operator=(initializer_list<T> LinkedList);
+    T& operator[](int index);
 };
+
+template<class T>
+void LinkedList<T>::operator=(initializer_list<T> list) {
+    if(isEmpty()) {
+        for(T i : list) {
+            addLast(i);
+        }
+    } else {
+        throw runtime_error("Error: la lista no está vacía");
+    }
+}
+
+template<class T>
+T& LinkedList<T>::operator[](int index) {
+    if (index >= 1 && index <= size) {
+        Node<T>* aux = head;
+        int i = 1;
+        while (aux != NULL) {
+            if (i == index) {
+                return aux-> data;
+            }
+            aux = aux->next;
+            i++;
+        }
+    }
+    throw out_of_range("Posición inválida");
+}
 
 template <class T>
 void LinkedList<T>::printElements() {
