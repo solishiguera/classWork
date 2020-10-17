@@ -40,7 +40,7 @@ bool BST<T>::find(T data) {
     throw out_of_range("No se encontró el dato ingresado");
 }
 
-/*
+/* EN PROCESO
  template<class T>
  void BST<T>::visit(int opcion) {
  switch (opcion) {
@@ -201,7 +201,7 @@ void BST<T>::removeElement(T data) {
         
     }
 
-    /*
+    /*  ~~~~~~INTENTO FALLIDO~~~~~
      bool isOnRight = false;
      
      if(root-> data == data) {

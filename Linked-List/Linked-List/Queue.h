@@ -1,8 +1,8 @@
 //
 //  Queue.h
-//  dataStructures
+//  Linked-List
 //
-//  Created by Diego Solis on 10/1/20.
+//  Created by Diego Solis on 10/6/20.
 //
 
 #ifndef Queue_h
@@ -12,8 +12,9 @@
 template<class T>
 struct Queue {
     Node<T>* head;
+    Node<T>* tail;
     int size = 0;
-    void dequeue();
+    T dequeue();
     void enqueue(T data);
     T front();
     T back();
@@ -23,7 +24,25 @@ struct Queue {
     void clear();
     void operator=(initializer_list<T> Queue);
     T& operator[](int index);
+    
 };
+
+template<class T>
+T& Queue<T>::operator[](int index) {
+    if (index >= 1 && index <= size) {
+        Node<T>* aux = head;
+        int i = 1;
+        while (aux != NULL) {
+            if (i == index) {
+                return aux-> data;
+            }
+            aux = aux->next;
+            i++;
+        }
+    }
+    throw out_of_range("Posición inválida");
+}
+
 
 template<class T>
 bool Queue<T>::isEmpty() {
@@ -31,29 +50,35 @@ bool Queue<T>::isEmpty() {
 }
 
 template<class T>
-void Queue<T>::dequeue() {
+T Queue<T>::dequeue() {
     if (!isEmpty()) {
+        T data = head -> data;
         Node<T>* aux = head;
-        head = head-> next;
+        head = aux-> next;
         delete aux;
         size--;
-    } else {
-        throw out_of_range("La queue está vacía");
+        
+        if(isEmpty()) {
+            tail = NULL;
+        }
+        return data;
     }
+        throw out_of_range("La queue está vacía");
 }
 
 template<class T>
 void Queue<T>::enqueue(T data) {
-    if (!isEmpty()) {
-        Node<T>* aux = head;
-        while (aux->next != NULL) {
-            aux = aux ->  next;
-        }
-        aux->next = new Node<T>(data);
+    if(!isEmpty()) {
+        tail-> next = new Node<T>(data);
+        tail = tail->next;
+        size++;
+        return;
     } else {
         head = new Node<T>(data);
+        tail = head;
+        size++;
+        return;
     }
-    size++;
 }
 
 template<class T>
@@ -110,22 +135,6 @@ void Queue<T>::operator=(initializer_list<T> list) {
     } else {
         throw runtime_error("Error: la lista no está vacía");
     }
-}
-
-template<class T>
-T& Queue<T>::operator[](int index) {
-    if (index >= 1 && index <= size) {
-        Node<T>* aux = head;
-        int i = 1;
-        while (aux != NULL) {
-            if (i == index) {
-                return aux-> data;
-            }
-            aux = aux->next;
-            i++;
-        }
-    }
-    throw out_of_range("Posición inválida.");
 }
 
 #endif /* Queue_h */
