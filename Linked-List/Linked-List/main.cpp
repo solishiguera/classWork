@@ -14,7 +14,7 @@ using namespace std;
  Git
  cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork
  */
-
+  
 template<class T>
 void generaLista(LinkedList<T> &lista, string type) {
     T dato;
@@ -31,8 +31,10 @@ void generaLista(LinkedList<T> &lista, string type) {
 
 template<class T>
 void menuOpciones(LinkedList<T> lista) {
-    int opcion = 10;
-    while(opcion != 9) {
+    int opcion = 15;
+    int lastOption;
+    while(opcion != 13) {
+        lastOption = opcion;
         cout << endl;
         cout << "Lista de opciones" << endl;
         cout << "0) Ordenar lista" << endl;
@@ -44,7 +46,11 @@ void menuOpciones(LinkedList<T> lista) {
         cout << "6) Actualizar dato en posición determinada" << endl;
         cout << "7) Actualizar dato" << endl;
         cout << "8) Buscar dato" << endl;
-        cout << "9) Salir" << endl;
+        cout << "9) Limpiar lista" << endl;
+        cout << "10) Duplicar datos" << endl;
+        cout << "11) Eliminar datos duplicados" << endl;
+        cout << "12) Voltear orden de lista" << endl;
+        cout << "13) Salir" << endl;
         cout << "Teclea la opción que desees: ";
         cin >> opcion;
         lista.printElements();
@@ -143,6 +149,31 @@ void menuOpciones(LinkedList<T> lista) {
                 } catch(out_of_range& e) {
                     e.what();
                 }
+                lista.printElements();
+                break;
+            }
+            case 9: { // Limpiar lista
+                lista.clear();
+                lista.printElements();
+                cout << "Lista está vacía ^^ " << endl;
+                break;
+            }
+            case 10: { // Duplicar datos
+                lista.duplicate();
+                lista.printElements();
+                break;
+            }
+            case 11: { // Eliminar datos duplicados
+                if(lastOption != 10) {
+                    cout << "Primero es necesario duplicar la lista" << endl;
+                } else {
+                    lista.removeDuplicates();
+                    lista.printElements();
+                }
+                break;
+            }
+            case 12: { // Voltear orden de lista
+                lista.reverse();
                 lista.printElements();
                 break;
             }
