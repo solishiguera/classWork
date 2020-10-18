@@ -30,8 +30,13 @@ public:
     void printElements();
     void operator=(initializer_list<T> LinkedList);
     T& operator[](int index);
+    void clear();
+    void duplicate();
+    void removeDuplicates();
+    void reverse();
 };
 
+// Complejidad O(n)
 template<class T>
 void LinkedList<T>::operator=(initializer_list<T> list) {
     if(isEmpty()) {
@@ -43,6 +48,7 @@ void LinkedList<T>::operator=(initializer_list<T> list) {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 T& LinkedList<T>::operator[](int index) {
     if (index >= 1 && index <= size) {
@@ -59,6 +65,7 @@ T& LinkedList<T>::operator[](int index) {
     throw out_of_range("Posición inválida");
 }
 
+// Complejidad O(n)
 template <class T>
 void LinkedList<T>::printElements() {
     Node<T>* aux = head;
@@ -69,17 +76,20 @@ void LinkedList<T>::printElements() {
     cout << endl;
 }
 
+// Complejidad O(1)
 template <class T>
 bool LinkedList<T>::isEmpty() {
     return size == 0;
 }
 
+// Complejidad O(1)
 template <class T>
 void LinkedList<T>::addFirst(T data) {
     head = new Node<T>(data, head);
     size++;
 }
 
+// Complejidad O(n)
 template <class T>
 void LinkedList<T>::addLast(T data) {
     if (!isEmpty()) {
@@ -94,6 +104,7 @@ void LinkedList<T>::addLast(T data) {
     size++;
 }
 
+// Complejidad O(n)
 template <class T>
 bool LinkedList<T>::deleteData(T data) {
     if(!isEmpty()) {
@@ -124,6 +135,7 @@ bool LinkedList<T>::deleteData(T data) {
     return false;
 }
 
+// Complejidad O(n)
 template <class T>
 void LinkedList<T>::deleteAt(int index) {
     if(index < 1 || index > size) {
@@ -154,6 +166,7 @@ void LinkedList<T>::deleteAt(int index) {
     }
 }
 
+// Complejidad O(n)
 template <class T>
 T LinkedList<T>::getData(int index) {
     if (index >= 1 && index <= size) {
@@ -170,6 +183,7 @@ T LinkedList<T>::getData(int index) {
     throw out_of_range("Posición inválida.");
 }
 
+// Complejidad O(n)
 template <class T>
 void LinkedList<T>::updateAt(int index, T newData) {
     if (!isEmpty()) {
@@ -180,12 +194,12 @@ void LinkedList<T>::updateAt(int index, T newData) {
             cont++;
         }
         aux->data = newData;
-        return; 
+        return;
     }
     throw out_of_range("Position invalid");
 }
 
-
+// Complejidad O(n)
 template <class T>
 void LinkedList<T>::updateData(T data, T newData) {
     Node<T>* aux = head;
@@ -201,6 +215,7 @@ void LinkedList<T>::updateData(T data, T newData) {
     }
 }
 
+// Complejidad O(log(n))
 template <class T>
 int LinkedList<T>::findData(T data) {
     int posI = 1;
@@ -231,6 +246,7 @@ int LinkedList<T>::findData(T data) {
 
 
 // SORT BEGINS
+// Complejidad O(log(n))
 template<class T>
 void LinkedList<T>::merge(int ini, int mid, int fin) {
     Queue<T> listaL;
@@ -292,5 +308,62 @@ void LinkedList<T>::sort() {
     mergeSort(1, size);
 }
 // SORT ENDS
+
+// Complejidad O(n)
+template<class T>
+void LinkedList<T>::clear() {
+    Node<T>* aux = head;
+    Node<T>* auxDos = head;
+    while(aux != NULL) {
+        auxDos = aux->next;
+        delete aux;
+        aux = auxDos;
+        size--;
+    }
+}
+
+// Complejidad O(n)
+template<class T>
+void LinkedList<T>::duplicate() {
+    Node<T>* aux = head;
+    Node<T>* siguiente = aux-> next;
+    Node<T>* duplica;
+    
+    while (aux-> next != NULL) {
+        siguiente = aux-> next;
+        duplica = new Node<T>(aux->data);
+        aux->next = duplica;
+        duplica->next = siguiente;
+        aux = siguiente;
+        size++;
+    }
+    addLast(aux->data);
+}
+
+// Complejidad O(n^2)
+template<class T>
+void LinkedList<T>::removeDuplicates() {
+    int cont = 2;
+    while (cont <= size) {
+        deleteAt(cont);
+        cont ++;
+    }
+    
+}
+
+// Complejidad O(n^3)
+template<class T>
+void LinkedList<T>::reverse() {
+    int cont = size;
+    Node<T>* aux = head;
+    T oldData;
+    while (cont > size/2) {
+        oldData = getData(cont);
+        updateAt(cont, aux->data);
+        aux-> data = oldData;
+        aux = aux-> next;
+        cont--;
+    }
+}
 
 #endif /* LinkedList_h */
