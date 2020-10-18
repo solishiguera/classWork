@@ -120,10 +120,14 @@ int Queue<T>::getSize() {
 
 template<class T>
 void Queue<T>::clear() {
-    for (int i = 1; i < size; i++) {
-        dequeue();
+    Node<T>* aux = head;
+    Node<T>* auxDos = head;
+    while(aux != NULL) {
+        auxDos = aux->next;
+        delete aux;
+        aux = auxDos;
+        size--;
     }
-    size = 0;
 }
 
 template<class T>
