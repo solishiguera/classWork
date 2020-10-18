@@ -27,6 +27,7 @@ struct Queue {
     
 };
 
+// Complejidad O(n)
 template<class T>
 T& Queue<T>::operator[](int index) {
     if (index >= 1 && index <= size) {
@@ -43,12 +44,13 @@ T& Queue<T>::operator[](int index) {
     throw out_of_range("Posición inválida");
 }
 
-
+// Complejidad O(1)
 template<class T>
 bool Queue<T>::isEmpty() {
     return size == 0;
 }
 
+// Complejidad O(1)
 template<class T>
 T Queue<T>::dequeue() {
     if (!isEmpty()) {
@@ -66,6 +68,7 @@ T Queue<T>::dequeue() {
         throw out_of_range("La queue está vacía");
 }
 
+// Complejidad O(1)
 template<class T>
 void Queue<T>::enqueue(T data) {
     if(!isEmpty()) {
@@ -81,6 +84,7 @@ void Queue<T>::enqueue(T data) {
     }
 }
 
+// Complejidad O(1)
 template<class T>
 T Queue<T>::front() {
     if (!isEmpty()) {
@@ -90,6 +94,7 @@ T Queue<T>::front() {
     }
 }
 
+// Complejidad O(1)
 template<class T>
 T Queue<T>::back() {
     if (!isEmpty()) {
@@ -103,6 +108,7 @@ T Queue<T>::back() {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 void Queue<T>::printElements() {
     Node<T>* aux = head;
@@ -113,11 +119,13 @@ void Queue<T>::printElements() {
     cout << endl;
 }
 
+// Complejidad O(1)
 template<class T>
 int Queue<T>::getSize() {
     return size;
 }
 
+// Complejidad O(n)
 template<class T>
 void Queue<T>::clear() {
     Node<T>* aux = head;
@@ -130,6 +138,7 @@ void Queue<T>::clear() {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 void Queue<T>::operator=(initializer_list<T> list) {
     if(isEmpty()) {
