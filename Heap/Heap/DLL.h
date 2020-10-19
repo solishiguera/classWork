@@ -45,6 +45,7 @@ bool DoublyLinkedList<T>::deleteLast() {
         if (tail == NULL) {
             head = NULL;
         }
+        return true;
         delete aux;
     } else {
         return false;
