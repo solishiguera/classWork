@@ -34,7 +34,22 @@ public:
     void printReverse();
     bool isEmpty();
     int getSize();
+    bool deleteLast();
 };
+
+template<class T>
+bool DoublyLinkedList<T>::deleteLast() {
+    if (!isEmpty()) {
+        Node<T>* aux = tail;
+        tail = tail-> prev;
+        if (tail == NULL) {
+            head = NULL;
+        }
+        delete aux;
+    } else {
+        return false;
+    }
+}
 
 template<class T>
 DoublyLinkedList<T>::DoublyLinkedList() {

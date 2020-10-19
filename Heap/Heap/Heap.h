@@ -21,7 +21,17 @@ public:
     Heap(DoublyLinkedList<T> list);
     bool isEmpty();
     void print();
+    T remove();
 };
+
+template<class T>
+T Heap<T>::remove() {
+    if (!isEmpty()) {
+        T aux = heap[1];
+        swap(1, size); // índices
+        heap.deleteAt(size);
+    }
+}
 
 template<class T>
 Heap<T>::Heap() {
