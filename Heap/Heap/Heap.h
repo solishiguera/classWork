@@ -92,7 +92,7 @@ template<class T>
 void Heap<T>::downSort(int index) {
     while (index >= 1) {
         int pos = index;
-        while (pos * 2 >= size) {
+        while (pos * 2 <= size) {
             int s1 = pos * 2; // Si la lista empieza en 0, sería pos*2+1
             int s2 = pos * 2 + 1; // Si la lista empieza en 0, sería pos*2+2
             int max;

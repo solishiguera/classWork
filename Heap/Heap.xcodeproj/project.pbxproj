@@ -45,7 +45,6 @@
 		440BEE70253DF8CA00582BFA = {
 			isa = PBXGroup;
 			children = (
-				440BEE88253DFB5A00582BFA /* Queue.h */,
 				440BEE7B253DF8CA00582BFA /* Heap */,
 				440BEE7A253DF8CA00582BFA /* Products */,
 			);
@@ -62,6 +61,7 @@
 		440BEE7B253DF8CA00582BFA /* Heap */ = {
 			isa = PBXGroup;
 			children = (
+				440BEE88253DFB5A00582BFA /* Queue.h */,
 				440BEE7C253DF8CA00582BFA /* main.cpp */,
 				440BEE86253DF98100582BFA /* DLL.h */,
 				440BEE84253DF8D700582BFA /* Heap.h */,
