@@ -15,7 +15,7 @@ private:
     DoublyLinkedList<T> heap;
     int size;
     void downSort(int index);
-    void upSort(int index);
+    void upSort();
     void swap(int a, int b);
 public:
     Heap();
@@ -23,7 +23,6 @@ public:
     bool isEmpty();
     void print();
     T remove();
-    void HeapSort(DoublyLinkedList<T>& list, string order);
     void insertElement(T data);
 };
 
@@ -31,12 +30,11 @@ template<class T>
 void Heap<T>::insertElement(T data) {
     heap.addLast(data);
     size++;
-    upSort(size); // Falta número
+    upSort();
 }
 
 template<class T>
-void Heap<T>::HeapSort(DoublyLinkedList<T>& list, string order) {
-    //string order = "ascending"
+void HeapSort(DoublyLinkedList<T>& list, string order = "ascending") {
     Heap<T> heapAux(list);
     list.clear();
     while (!heapAux.isEmpty()) {
@@ -53,7 +51,6 @@ T Heap<T>::remove() {
     if (!isEmpty()) {
         T aux = heap[1];
         swap(1, size); // índices
-        //heap.deleteAt(size);
         heap.deleteLast();
         size --;
         downSort(1);
@@ -75,9 +72,9 @@ void Heap<T>::swap(int a, int b) {
     heap[b] = aux;
 }
 template<class T>
-void Heap<T>::upSort(int index) {
+void Heap<T>::upSort() {
     int pos = size;
-    while (pos >= 1) {
+    while (pos > 1) {
         int father = pos / 2;
         if(heap[pos] > heap[father]) {
             swap(father, pos);
