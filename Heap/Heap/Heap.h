@@ -26,6 +26,7 @@ public:
     void insertElement(T data);
 };
 
+// Complejidad O(n)
 template<class T>
 void Heap<T>::insertElement(T data) {
     heap.addLast(data);
@@ -33,6 +34,7 @@ void Heap<T>::insertElement(T data) {
     upSort();
 }
 
+// Complejidad O(n)
 template<class T>
 void HeapSort(DoublyLinkedList<T>& list, string order = "ascending") {
     Heap<T> heapAux(list);
@@ -46,6 +48,7 @@ void HeapSort(DoublyLinkedList<T>& list, string order = "ascending") {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 T Heap<T>::remove() {
     if (!isEmpty()) {
@@ -64,13 +67,15 @@ template<class T>
 Heap<T>::Heap() {
     size = 0;
 }
-
+// Complejidad O(1)
 template<class T>
 void Heap<T>::swap(int a, int b) {
     T aux = heap[a];
     heap[a] = heap[b];
     heap[b] = aux;
 }
+
+// Complejidad O(n)
 template<class T>
 void Heap<T>::upSort() {
     int pos = size;
@@ -85,6 +90,7 @@ void Heap<T>::upSort() {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 void Heap<T>::downSort(int index) {
     while (index >= 1) {
@@ -120,11 +126,13 @@ Heap<T>::Heap(DoublyLinkedList<T> list) {
     }
 }
 
+// Complejidad O(1)
 template<class T>
 bool Heap<T>::isEmpty() {
     return size == 0;
 }
 
+// Complejidad O(1)
 template<class T>
 void Heap<T>::print() {
     heap.print();
