@@ -13,6 +13,8 @@ cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork
 #include <iostream>
 using namespace std;
 #include "Node.h"
+#include "Queue.h"
+#include "Stack.h"
 #include "BST.h"
 
 int main() {
@@ -32,7 +34,11 @@ int main() {
         cout << "2. Buscar elemento" << endl;
         cout << "3. Eliminar elemento" << endl;
         cout << "4. Imprimir BST" << endl;
-        cout << "5. Salir" << endl;
+        cout << "5. Visit" << endl;
+        cout << "6. Height" << endl;
+        cout << "7. Ancestors" << endl;
+        cout << "8. What Level Am I?" << endl;
+        cout << "9. Salir" << endl;
         cout << "Teclea una opción: ";
         cin >> opcion;
         cout << endl;
@@ -79,7 +85,38 @@ int main() {
                 myBSTree.print();
                 break;
             }
-            case 5: {
+            case 5: { // visit
+                int opcion;
+                cout << "Teclea la opción que desees" << endl;
+                cout << "Pre Order" << endl;
+                cout << "In Order" << endl;
+                cout << "Post Order" << endl;
+                cout << "Level By Level" << endl;
+                cout << "Height" << endl;
+                cin >> opcion;
+                myBSTree.visit(opcion);
+                cout << endl;
+                break;
+            }
+            case 6: { // height
+                int height = myBSTree.heightBST();
+                cout << "Height: " << height << endl;
+                break;
+            }
+            case 7: { // ancestors
+                int data;
+                myBSTree.print();
+                cout << "Teclea dato que desees: ";
+                cin >> data;
+                myBSTree.ancestors(data);
+                break;
+            }
+            case 8: { // what level am i?
+                int data;
+                myBSTree.print();
+                cout << "Teclea dato que desees: ";
+                cin >> data;
+                myBSTree.whatLevelAmI(data);
                 break;
             }
             default:
