@@ -29,7 +29,7 @@ int main() {
     
     myBSTree.print();
     
-    while (opcion != 5) {
+    while (opcion != 9) {
         cout << "1. Insertar elemento" << endl;
         cout << "2. Buscar elemento" << endl;
         cout << "3. Eliminar elemento" << endl;
@@ -88,11 +88,12 @@ int main() {
             case 5: { // visit
                 int opcion;
                 cout << "Teclea la opción que desees" << endl;
-                cout << "Pre Order" << endl;
-                cout << "In Order" << endl;
-                cout << "Post Order" << endl;
-                cout << "Level By Level" << endl;
-                cout << "Height" << endl;
+                cout << "1. Pre Order" << endl;
+                cout << "2. In Order" << endl;
+                cout << "3. Post Order" << endl;
+                cout << "4. Level By Level" << endl;
+                cout << "5. Height" << endl;
+                cout << "Opcion: ";
                 cin >> opcion;
                 myBSTree.visit(opcion);
                 cout << endl;
@@ -109,18 +110,21 @@ int main() {
                 cout << "Teclea dato que desees: ";
                 cin >> data;
                 myBSTree.ancestors(data);
+                cout << endl;
                 break;
             }
             case 8: { // what level am i?
-                int data;
+                int data, level;
                 myBSTree.print();
                 cout << "Teclea dato que desees: ";
                 cin >> data;
-                myBSTree.whatLevelAmI(data);
+                level = myBSTree.whatLevelAmI(data);
+                cout << "Level: " << level << endl;
                 break;
             }
-            default:
+            default: {
                 break;
+            }
         }
     }
     return 0;

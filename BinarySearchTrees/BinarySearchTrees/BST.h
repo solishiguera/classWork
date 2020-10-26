@@ -8,6 +8,8 @@
 #ifndef BST_h
 #define BST_h
 
+#include "Stack.h"
+
 template<class T>
 class BST {
 private:

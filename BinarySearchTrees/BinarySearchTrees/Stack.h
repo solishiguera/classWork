@@ -5,8 +5,8 @@
 //  Created by Diego Solis on 10/25/20.
 //
 
-#ifndef Queue_h
-#define Queue_h
+#ifndef Stack_h
+#define Stack_h
 
 template<class T>
 struct Stack {
@@ -107,4 +107,4 @@ void Stack<T>::printElements() {
     }
     cout << endl;
 }
-#endif /* Queue_h */
+#endif /* Stack_h */
