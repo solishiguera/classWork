@@ -26,6 +26,7 @@ public:
     //void visit(int opcion);
 };
 
+// Complejidad O(n)
 template<class T>
 bool BST<T>::find(T data) {
     Node<T>* aux = root;
@@ -40,30 +41,7 @@ bool BST<T>::find(T data) {
     throw out_of_range("No se encontró el dato ingresado");
 }
 
-/* EN PROCESO
- template<class T>
- void BST<T>::visit(int opcion) {
- switch (opcion) {
- case 1: {
- // Preorder
- break;
- }
- case 2: {
- break;
- }
- case 3: {
- break;
- }
- case 4: {
- break;
- }
- 
- default:
- break;
- }
- }
- */
-
+// Complejidad O(1)
 template<class T>
 int BST<T>::howManyChilds(Node<T>* aux) {
     int cont = 0;
@@ -73,6 +51,7 @@ int BST<T>::howManyChilds(Node<T>* aux) {
     return cont;
 }
 
+// Complejidad O(n)
 template<class T>
 void BST<T>::insert(T data) {
     if (isEmpty()) {
@@ -101,6 +80,7 @@ void BST<T>::insert(T data) {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 void BST<T>::printTree(Node<T>* aux, int level) {
     if (aux != NULL) {
@@ -113,6 +93,7 @@ void BST<T>::printTree(Node<T>* aux, int level) {
     }
 }
 
+// Complejidad O(n)
 template<class T>
 void BST<T>::print() {
     int level = 0;
@@ -122,6 +103,7 @@ void BST<T>::print() {
     
 }
 
+// Complejidad O(n)
 template<class T>
 void BST<T>::removeElement(T data) {
     if (!isEmpty()) {
@@ -238,6 +220,7 @@ void BST<T>::removeElement(T data) {
      */
 }
 
+// Complejidad O(1)
 template<class T>
 bool BST<T>::isEmpty() {
     return root == NULL;

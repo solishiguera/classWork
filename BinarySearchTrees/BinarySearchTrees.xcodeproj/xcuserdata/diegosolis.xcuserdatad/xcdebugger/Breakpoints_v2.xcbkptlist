@@ -30,8 +30,8 @@
             filePath = "BinarySearchTrees/BST.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "removeElement(data)"
             landmarkType = "9">
          </BreakpointContent>
