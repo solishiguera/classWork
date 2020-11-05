@@ -9,6 +9,7 @@
 using namespace std;
 #include <vector>
 #include "GrafoLista.h"
+#include "GrafoMatriz.h"
 
 /*
  Git
@@ -19,8 +20,8 @@ using namespace std;
 
 int main() {
     vector< vector<int> > listaAd = {{1,2,3,4}, {2,1,3}, {3,4}};
-    GrafoLista<int> hola(listaAd, 8,8);
-    hola.printListaAdy();
+    GrafoLista<int> grafoUno(listaAd, 8,8);
+    grafoUno.printListaAdy();
     
     
     return 0;
