@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 #include <vector>
-#include "GrafoLista.h"
+#include "Graph.h"
 #include "GrafoMatriz.h"
 
 /*
@@ -20,9 +20,7 @@ using namespace std;
 
 int main() {
     vector< vector<int> > listaAd = {{1,2,3,4}, {2,1,3}, {3,4}};
-    GrafoLista<int> grafoUno(listaAd, 8,8);
-    grafoUno.printListaAdy();
     
-    
+    vector< vector<char> > list = {{'a','b'}, {'a','c'},{'a','e'},{'b','a'},{'b','d'},{'c','a'},{'c','d'},{'d','b'},{'d','c'},{'d','e'},{'e','a'},{'e','d'}};
     return 0;
 }

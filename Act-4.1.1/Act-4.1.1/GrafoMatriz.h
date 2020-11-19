@@ -12,7 +12,7 @@ template<class T>
 class GrafoMatriz {
 private:
     vector< vector<bool> > listaAdyac;
-    vector<T> vertices; 
+    vector<T> vertices;
     int cantVertices, cantArcos;
 public:
     GrafoMatriz();
@@ -22,25 +22,24 @@ public:
 
 template<class T>
 GrafoMatriz<T>::GrafoMatriz(vector< vector<T> > listaAdyac, int cantVertices, int cantArcos) {
-    this-> listaAdyac = listaAdyac;
     this-> cantVertices = cantVertices;
     this-> cantArcos = cantArcos;
+    
+    /* Inicializar matriz, hacerlo en menos líneas */
+    // FALTA TYPENAME EN ITERATOR
+    for (int i = 0; i < cantVertices; i++) {
+        vector<bool> vectorTemp;
+        for (int j = 0; j < cantVertices; j++) {
+            vectorTemp.push_back(false);
+        }
+        listaAdyac.push_back(vectorTemp);
+    }
+    
+    
 }
 
 template<class T>
 void GrafoMatriz<T>::printListaAdy() {
-    for (int i = 0; i < cantVertices; i++) {
-        cout << i << "\t";
-    }
-    cout << endl;
-    
-    for (int i = 0; i < listaAdyac.size(); i++) {
-        cout << listaAdyac[i][0] << ": ";
-        for (int j = 1; j < listaAdyac[i].size(); j++) {
-            cout << "\t" << listaAdyac[i][j];
-        }
-        cout << endl;
-    }
 }
 
 #endif /* GrafoMatriz_h */
