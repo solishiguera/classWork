@@ -81,7 +81,7 @@ template<class T>
 void Graph<T>::print() {
     for (int v = 0; v < size; v++) {
         cout << vertices[v] << "-> ";
-        for (auto path : vertices[v]) {
+        for (auto path : adjList[v]) {
             cout << path.target << " " << path.weight << " ";
         }
         cout << endl;
