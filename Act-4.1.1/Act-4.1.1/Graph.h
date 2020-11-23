@@ -10,7 +10,6 @@ struct Edge {
 template<class T>
 class Graph {
 private:
-    // Se declaró size después del sort en constructor
     vector< vector< Edge<T> > > adjList;
     vector<T> vertices;
     int findVertex(T vertex);
@@ -27,12 +26,14 @@ public:
 
 template<class T>
 Graph<T>::Graph(vector< vector<T> > list) {
-    int source = 0;
-    int target = 1;
+    int source = 0; // Me permite determinar la fuente {{'a','b'}} -> la 'a' es fuente
+    int target = 1; // Me permite determinar el destino {{'a','b'}} -> la 'b' es destino
     int weight = 2;
-
+    //vector<T> edge;
+    
     // Crear lista de vertices
-    for (vector<T> edge : list) {
+    for (vector<T> edge: list) {
+        // Iterar en toda mi lista
         T temp = edge[source];
         int pos = findVertex(temp);
         if (pos < 0) {
@@ -43,21 +44,12 @@ Graph<T>::Graph(vector< vector<T> > list) {
         if (pos < 0) {
             vertices.push_back(temp);
         }
+        
     }
     
     size = (int) vertices.size();
     // Ordenar la lista de vertices
     sort(vertices.begin(), vertices.end());
-
-    // Agregar los vertices a la lista de adyacencias
-//    for (auto vertex : vertices) {
-//        vector< Edge<T> > temp;
-//        Edge<T> edge;
-//        edge.target = vertex;
-//        edge.weight = 0;
-//        temp.push_back(edge);
-//        adjList.push_back(temp);
-//    }
     
     //vector< Edge<T> > edgeTemp;
     vector< vector< Edge<T> > > tempList(size);
@@ -71,6 +63,7 @@ Graph<T>::Graph(vector< vector<T> > list) {
         edge.weight = path[weight];
         adjList[pos].push_back(edge);
     }
+    
 }
 
 template<class T>
@@ -88,7 +81,7 @@ template<class T>
 void Graph<T>::print() {
     for (int v = 0; v < size; v++) {
         cout << vertices[v] << "-> ";
-        for (auto path : edge) {
+        for (auto path : vertices[v]) {
             cout << path.target << " " << path.weight << " ";
         }
         cout << endl;
@@ -120,6 +113,7 @@ void Graph<T>::bfs(T vertex) {
         cout << endl;
     }
 }
+
 
 template<class T>
 void Graph<T>::dfs(T vertex) {
@@ -153,10 +147,10 @@ int Graph<T>::minWeight(vector<int> weight, vector<bool> status) {
     int minWeight = INT_MAX;
     int minVertex = -1;
     for (int v = 0; v < size; v++) {
-        if (!status[v]) {
-            if (minWeight > weight[v]) {
-                minWeight = weight[v];
-                minVertex = v;
+        if (!status[v]) { // Si status en posición v NO es Verdadero
+            if (minWeight > weight[v]) { // Si el minweight es mayor a weight en posición V
+                minWeight = weight[v]; // minweight ahora es igual a weight en posición V
+                minVertex = v; // minVertex ahora es igual a v
             }
         }
     }

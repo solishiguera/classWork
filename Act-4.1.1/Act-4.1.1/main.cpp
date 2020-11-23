@@ -9,36 +9,35 @@ using namespace std;
 
 int main() {
     
-    //list = {{0,3,7},{0,4,2},{1,3,1},{1,6,3},{2,6,8},{3,0,7},{3,1,1},{3,5,4},{3,7,2},{4,0,2},{4,7,5},{5,3,4},{5,6,4},{5,7,6},{6,1,3},{6,2,8},{6,5,4},{7,3,2},{7,4,5},{7,5,6}} 
-    vector< vector<int> > list = {{0,2,1},{0,3,7},{2,0,1},{2,1,1},{2,6,3},{1,2,1},{1,6,3},{1,5,4},{5,1,4},{5,6,4},{5,3,7},{3,0,7},{3,5,7},{3,7,1},{6,2,3},{6,1,3},{6,5,4},{6,4,6},{6,7,6},{7,6,6},{7,3,1},{4,6,6}}; 
-     //vector< vector<int> > list = {{0,3,4},{0,4,8},{1,6,5},{2,6,9},{3,7,8},{4,2,3},{5,1,9},{5,6,7},{5,7,8},{7,5,9}};
+    /*
+     GIT
+     cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork
+     */
+    
+    vector< vector<int> > list;
+    
+    //list = {{'a','b'},{'a','e'},{'b','a'},{'b','d'},{'c','a'},{'c','d'},{'d','b'},{'d','c'},{'d','e'},{'e','a'},{'e','d'}};
+    
+    //list = {{0,3,7}, {0,4,2}, {1,3,1}, {1,6,3}, {2,6,8}, {3,0,7}, {3,1,1}, {3,5,4}, {3,7,2}, {4,0,2}, {4,7,5}, {5,3,4}, {5,6,4}, {5,7,6}, {6,1,3}, {6,2,8}, {6,5,4}, {7,3,2}, {7,4,5}, {7,5,6}};
+    
+    //list = {{0,2,1}, {0,3,7}, {2,0,1}, {2,1,1}, {2,6,3}, {1,2,1}, {1,6,3}, {1,5,4}, {5,1,4}, {5,6,4}, {5,3,7}, {3,0,7}, {3,5,7}, {3,7,1}, {6,2,3}, {6,1,3}, {6,5,4}, {6,4,6}, {6,7,6}, {7,6,6}, {7,3,1}, {4,6,6}}; 
+    list = {{0,3,4},{0,4,8},{1,6,5},{2,6,9},{3,7,8},{4,2,3},{5,1,9},{5,6,7},{5,7,8},{7,5,9}};
+    
      Graph<int> graph(list);
+    
      GraphM<int> graphM(list);
-/*
-     cout << endl
-          << "Matriz de adyacencias" << endl
-          << endl;
+    
+     cout << endl << "Matriz de adyacencias" << endl << endl;
      graphM.print();
      cout << endl << "BFS" << endl << endl;
-     graph.bfs();
-     cout << endl
-          << "DFS" << endl
-          << endl;
-     graph.dfs();
-     
-     cout << endl
-          << "List de adyacencias" << endl
-          << endl;
+     graph.bfs(3);
+     cout << endl << "DFS" << endl << endl;
+     graph.dfs(3);
+     cout << endl << "List de adyacencias" << endl << endl;
      graph.print();
-     cout << endl
-          << "BFS" << endl
-          << endl;
-     graph.bfs();
-     cout << endl
- 
-          << "DFS" << endl
-          << endl;
-     graph.dfs();
- */
+     cout << endl << "BFS" << endl << endl;
+     graph.bfs(3);
+     cout << endl << "DFS" << endl << endl;
+     graph.dfs(3);
      return 0;
 }

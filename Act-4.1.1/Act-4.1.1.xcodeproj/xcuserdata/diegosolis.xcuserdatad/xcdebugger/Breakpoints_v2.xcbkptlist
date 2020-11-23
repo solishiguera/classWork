@@ -3,4 +3,194 @@
    uuid = "C309D140-BA35-40DC-B13F-C6FE7D4E979A"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "736EFB58-CE47-42E7-BDAB-FC5362463202"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB0E9CB5-5D4B-4843-897F-B8B53498799B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/main.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "main()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A0202B1-371B-4B91-AD61-ED77297B98D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/Graph.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "Graph(list)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/Graph.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "Graph(list)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572 - c306d86dc6c4722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572 - c306d86dc6c4722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "275">
+               </Location>
+               <Location
+                  uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572 - c306d86dc6c4722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "287">
+               </Location>
+               <Location
+                  uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572 - c306d86dc6c4722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "860">
+               </Location>
+               <Location
+                  uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572 - c306d86dc6c4722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  uuid = "FEB74354-F681-4B3F-9861-FD3839ADC572 - c306d86dc6c4722"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "896">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C545009-1DFA-4A6B-8F41-29F590BE0196"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/Graph.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "Graph(list)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3331508-B324-4C9D-84E8-B87848098883"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/Graph.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "Graph(list)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
