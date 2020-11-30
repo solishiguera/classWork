@@ -50,6 +50,22 @@ void HashQ::addData(string data) {
     }
 }
 
+int HashQ::quadTest(int index) {
+    if (status[index] != 1) { // Si está vacía o borrada, regreso index
+        return index;
+    }
+    
+    int cont = 1;
+    int newIndex = index;
+    while (status[newIndex] == 1) { // Mientras que no sea borrado y vacío
+        newIndex = (index + cont * cont) % size; // Residuo sobre size
+        cont++;
+        
+    }
+    
+    return newIndex;
+}
+
 int HashQ::hashing(string data) {//, int &key, int size) {
     // key = (unsigned char) data[0]; // Regresa ascii extendido
     // key = int(data[0]); // Regresa el código ascii

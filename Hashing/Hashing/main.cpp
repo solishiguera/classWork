@@ -19,7 +19,7 @@ int main() {
     
     int key;
     int size = 53;
-    int index = hashing(data, key, size);
+    int index = 0;
     cout << "La llave es: " << key << ", el índice es: " << index << endl;
     
     
