@@ -6,7 +6,8 @@
 //
 
 #include <iostream>
-using namespace std; 
+using namespace std;
+#include <math.h>
 #include <vector>
 #include "HashQ.h"
 

@@ -58,15 +58,15 @@ int HashQ::quadTest(int index) {
     int cont = 1;
     int newIndex = index;
     while (status[newIndex] == 1) { // Mientras que no sea borrado y vacío
-        newIndex = (index + cont * cont) % size; // Residuo sobre size
+        newIndex = index + pow(-1, cont - 1) * pow((cont + 1)/ 2, 2); // Revisar si el elemento ya existe <----------- <-----------
+        newIndex %= size;
         cont++;
-        
     }
     
     return newIndex;
 }
 
-int HashQ::hashing(string data) {//, int &key, int size) {
+int HashQ::hashing(string data) { //, int &key, int size) {
     // key = (unsigned char) data[0]; // Regresa ascii extendido
     // key = int(data[0]); // Regresa el código ascii
     int key = 0;
