@@ -6,9 +6,28 @@
 //
 
 #include <iostream>
+using namespace std; 
+#include <vector>
+#include "HashQ.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int hashing(string data, int &key) {
+    key = (unsigned char) data[0]; // Regresa ascii extendido
+    // key = int(data[0]); // Regresa el código ascii
+    int index;
+    // Función hashing
+    
+    return index;
+}
+
+int main() {
+    string data;
+    cout << "Teclea una palabra de máximo cuatro letras: ";
+    cin >> data;
+    
+    int key;
+    int index = hashing(data, key);
+    cout << "La llave es: " << key << ", el índice es: " << index << endl;
+    
+    
     return 0;
 }
