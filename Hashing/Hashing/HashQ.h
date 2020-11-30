@@ -8,19 +8,63 @@
 #ifndef HashQ_h
 #define HashQ_h
 
-template<class T>
 class HashQ {
 private:
-    vector<T> table;
+    vector<string> table; // No tiene caso usar templates porque siempre uso strings
     int size;
+    int qty; // Cantidad de elementos que tengo en la tabla
     vector<int> status; // 0 -> vacío, 1 -> ocupado, 2 -> borrado; 3 edos
-    int hashing(T data); // me da índice de tabla
+    int hashing(string data); //, int &key, int size); // me da índice de tabla
     int quadTest(int index); // manejo de colsiones
-    int findData(T data); // Si lo encontró o no lo encontró
+    int findData(string data); // Si lo encontró o no lo encontró
+    bool isFull();
 public:
-    HashQ(vector<T> list);
+    HashQ(vector<string> list);
+    void addData(string data);
+    bool deleteData(string data);
 };
 
+HashQ::HashQ(vector<string> list) {
+    size = (int) list.size();
+    qty = 0;
+    vector<string> tmpTable(size);
+    table = tmpTable; // Iniciar tabla vacía
+    
+    vector<int> tmpStatus(size, 0);
+    status = tmpStatus; // Iniciar status en 0, vacío
+    
+    int index;
+    for(auto data : list) {
+        index = hashing(data);
+        
+    }
+}
+
+void HashQ::addData(string data) {
+    if(!isFull()) {
+        int index = hashing(data); // El index va ser de acuerdo a la llave (Hashing)
+        int newIndex = quadTest(index); // Manejo de colisiones, (prueba cuadrática)
+        table[newIndex] = data; // Guarda dato en casilla de nuevo index
+        status[newIndex] = 1; // Poner que ya está llena casilla
+        qty++;
+    }
+}
+
+int HashQ::hashing(string data) {//, int &key, int size) {
+    // key = (unsigned char) data[0]; // Regresa ascii extendido
+    // key = int(data[0]); // Regresa el código ascii
+    int key = 0;
+    // Función hashing
+    for (auto c : data) { // Sumar el valor ascii de todas las letras de palabra
+        key += (unsigned char) c;
+    }
+    
+    return key % size; // Size es 53, número primo más cercano a 50
+}
+
+bool HashQ::isFull() {
+    return size == qty;
+}
 
 
 #endif /* HashQ_h */
