@@ -10,13 +10,18 @@ using namespace std;
 #include <vector>
 #include "HashQ.h"
 
-int hashing(string data, int &key) {
-    key = (unsigned char) data[0]; // Regresa ascii extendido
+int hashing(string data, int &key, int size) {
+    // key = (unsigned char) data[0]; // Regresa ascii extendido
     // key = int(data[0]); // Regresa el código ascii
     int index;
-    // Función hashing
     
-    return index;
+    // Función hashing
+    for(auto c : data) { // Sumar el valor ascii de todas las letras de palabra
+        key += (unsigned char) c;
+    }
+    
+    
+    return key % size; // Size es 53, número primo más cercano a 50
 }
 
 int main() {
@@ -25,7 +30,8 @@ int main() {
     cin >> data;
     
     int key;
-    int index = hashing(data, key);
+    int size = 53;
+    int index = hashing(data, key, size);
     cout << "La llave es: " << key << ", el índice es: " << index << endl;
     
     
