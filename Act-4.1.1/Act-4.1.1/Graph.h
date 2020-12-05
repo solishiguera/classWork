@@ -154,6 +154,7 @@ int Graph<T>::minWeight(vector<int> weight, vector<bool> status) {
             }
         }
     }
+    return minVertex;
 }
 
 template<class T>

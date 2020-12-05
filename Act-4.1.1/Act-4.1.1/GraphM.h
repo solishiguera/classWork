@@ -95,7 +95,7 @@ void GraphM<T>::bfs() {
     vector<bool> status(size,false); // Creamos vector llamado status, mismo tamaño q cant vértices, elementos en false
     queue<T> q;
     // agregamos el primer vertice a la fila
-    q.push(vertices[0]);
+    q.push(vertices[0]);	
     // Le cambiamos el status al primer vértice
     status[0] = true; // Lo ponemos en true para ya no procesarlo
     
