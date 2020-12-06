@@ -17,6 +17,8 @@ private:
     int findVertex(T vertex); // Complejidad O(n)
     void dfsR(T vertex, vector<bool> &status); // Complejidad O(n)
     int minWeight(vector<int> weight, vector<bool> status); // Complejidad O(log(n))
+    bool bipartiteGraphR(int num, vector<int> &color, vector<bool> &status); // Complejidad O(n^2)
+    void topologicalSortR(int vertex, vector<bool> &status, stack<T> &Stack); // Complejidad O(n)
 public:
     GraphM(vector< vector<T> > list);
     void print(); // Complejidad O(n^2)
@@ -24,6 +26,7 @@ public:
     void dfs(T vertex); // Complejidad O(log(n))
     void shortestPath(T vertex); // Complejidad O(n^2)
     bool bipartiteGraph(); // Complejidad O(n^2)
+    void topologicalSort(); // Complejidad O(log(n))
 };
 
 template<class T>
@@ -173,17 +176,21 @@ void GraphM<T>::shortestPath(T vertex) {
         vector<int> path(size, -1);
         weight[pos] = 0;
         int next = minWeight(weight, status);
-        while (next >= 0) {
+        
+        while(next >= 0) { // Puede ser -1
             status[next] = true;
-            for (int a = 0; a < adjMatrix[next].size(); a++) {
-                int posAdj = findVertex(adjMatrix[next][a].target);
-                if (!status[posAdj]) {
-                    if (weight[posAdj] > weight[next] + adjList[next][a].weight) {
-                        weight[posAdj] = weight[next] + adjList[next][a].weight;
-                        path[posAdj] = next;
+            for(int i = 0; i < adjMatrix[next].size(); i++){
+                if(adjMatrix[next][i] >= 0){
+                    int posAdj = findVertex(i); // Se busca vértice en posición i
+                    if(!status[posAdj]) {
+                        if(weight[posAdj] > weight[next] + adjMatrix[next][i]){
+                            weight[posAdj] = weight[next] + adjMatrix[next][i];
+                            path[posAdj] = next;
+                        }
                     }
                 }
             }
+            
             next = minWeight(weight, status);
         }
         
@@ -224,7 +231,7 @@ int GraphM<T>::minWeight(vector<int> weight, vector<bool> status) {
 
 // Complejidad O(n^2)
 template<class T>
-bool GraphM<T> :: bipartiteGraph(){
+bool GraphM<T>::bipartiteGraph(){
     vector<int> color(vertices.size(),-1); // Creamos vector llamado color, con -1
     vector<bool> status(vertices.size(), false); // Se crea vector en status; inicia en false
     color[0] = 0; // Primera posic es 0
@@ -237,13 +244,14 @@ bool GraphM<T> :: bipartiteGraph(){
 
 // Complejidad O(n^2)
 template<class T>
-bool GraphM<T> :: bipartiteGraphR(int num, vector<int> &color, vector<bool> &status){
+bool GraphM<T>::bipartiteGraphR(int num, vector<int> &color, vector<bool> &status) {
+    
     for(int i = 0; i < adjMatrix[num].size(); i++){
         if(adjMatrix[num][i] >= 0) { // Si el número en posicion num, i es 0
             if(!status[i]) { // Si status NO es verdadero
                 status[i] = true; // Se coloca como verdadero
                 if (color[num] == 0) { // Si es 0 se coloca en 1
-                    color[i] = 1
+                    color[i] = 1; 
                 } else { // De lo contrario se coloca en 0
                     color[i] = 0;
                 }
@@ -259,6 +267,38 @@ bool GraphM<T> :: bipartiteGraphR(int num, vector<int> &color, vector<bool> &sta
         }
     }
     return true; // De lo contrario, regresa true
+}
+
+// Complejidad O(log(n))
+template<class T>
+void GraphM<T>::topologicalSort(){
+    stack<T> Stack;
+    vector<bool> status(vertices.size(), false); // Se crea vector status, falso
+    for(int i = 0; i < vertices.size(); i++) {
+        if(!status[i]) { // Si status NO es verdadero
+            topologicalSortR(i, status, Stack);
+            Stack.push(vertices[i]);
+        }
+    }
+    
+    while (Stack.empty() == false) {
+        cout << Stack.top() << " ";
+        Stack.pop();
+    }
+}
+
+// Complejidad O(n)
+template<class T>
+void GraphM<T>::topologicalSortR(int vertex, vector<bool> &status, stack<T> &Stack){
+    status[vertex] = true;
+    for (int i = 0; i < adjMatrix[vertex].size(); i++){
+        if(adjMatrix[vertex][i] >=0){
+            if(!status[i]){
+                topologicalSortR(i, status, Stack);
+                Stack.push(vertices[i]);
+            }
+        }
+    }
 }
 
 

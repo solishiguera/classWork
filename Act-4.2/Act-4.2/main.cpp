@@ -37,16 +37,19 @@ int main() {
     
     cout << endl << "Matriz de adyacencias" << endl << endl;
     graphM.print();
-    cout << endl << "BFS" << endl << endl;
-    graphM.bfs();
-    
-    cout << endl << "DFS" << endl << endl;
-    graphM.dfs();
     
     cout << endl << "List de adyacencias" << endl << endl;
     graph.print();
     
     cout << endl << "Shortest Path" << endl << endl;
     graph.shortestPath(3);
+    
+    cout << endl << "Es bipartita: " << graph.bipartiteGraph() << endl;
+    
+    cout << endl << "Topological Sort" << endl;
+    graph.topologicalSort();
+    cout << endl;
+    
+    
     return 0;
 }

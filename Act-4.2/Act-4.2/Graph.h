@@ -23,12 +23,16 @@ private:
     int size;
     void dfsR(T vertex, vector<bool> &status);
     int minWeight(vector<int> weight, vector<bool> status);
+    void topologicalSortR(int vertex, vector<bool> &status, stack<T> &Stack);
+    bool bipartiteGraphR(int num, vector<int> &color, vector<bool> &status);
 public:
     Graph(vector< vector<T> > list);
+    void topologicalSort(); // Complejidad O(log(n))
     void bfs(T vertex);
     void dfs(T vertex);
     void shortestPath(T vertex);
     void print();
+    bool bipartiteGraph();
 };
 
 template<class T>
@@ -61,7 +65,7 @@ Graph<T>::Graph(vector< vector<T> > list) {
     //vector< Edge<T> > edgeTemp;
     vector< vector< Edge<T> > > tempList(size);
     adjList = tempList;
-
+    
     // Agregar los vertices adyacentes a la lista de adyacencias
     for (auto path : list) {
         int pos = findVertex(path[source]);
@@ -207,31 +211,73 @@ void Graph<T>::shortestPath(T vertex) {
     }
 }
 
-
- 
-// function to check whether a graph is bipartite or not
-bool isBipartite(vector<int> adj[], int v, vector<bool>& visited, vector<int>& color) {
- 
-    for (int u : adj[v]) {
- 
-        // if vertex u is not explored before
-        if (visited[u] == false) {
- 
-            // mark present vertic as visited
-            visited[u] = true;
- 
-            // mark its color opposite to its parent
-            color[u] = !color[v];
- 
-            // if the subtree rooted at vertex v is not bipartite
-            if (!isBipartite(adj, u, visited, color))
-                return false;
+// Complejidad O(log(n))
+template<class T>
+void Graph<T>::topologicalSort(){
+    stack<T> Stack;
+    vector<bool> status(vertices.size(), false);
+    for(int i = 0; i< vertices.size(); i++){
+        if(!status[i] && adjList[i].size() > 0)
+        {
+            topologicalSortR(i, status, Stack);
+            Stack.push(vertices[i]);
         }
- 
-        // if two adjacent are colored with same color then
-        // the graph is not bipartite
-        else if (color[u] == color[v])
-            return false;
+    }
+    while (Stack.empty() == false) {
+        cout << Stack.top() << " ";
+        Stack.pop();
+    }
+}
+
+// Complejidad O(n)
+template<class T>
+void Graph<T>::topologicalSortR(int vertex, vector<bool> &status, stack<T> &Stack) {
+    status[vertex] = true;
+    for (auto adj : adjList[vertex]){
+        int posAdj = findVertex(adj.target);
+        if(!status[posAdj]){
+            topologicalSortR(posAdj, status, Stack);
+            Stack.push(adj.target);
+        }
+    }
+}
+
+// Complejidad O(n^2)
+template<class T>
+bool Graph<T>::bipartiteGraph() { // Similar al de matrices
+    vector<int> color(vertices.size(),-1);
+    vector<bool> status(vertices.size(), false);
+    color[0] = 0;
+    status[0] = true;
+    if(bipartiteGraphR(0, color, status))
+    {
+        return true;
+    }
+    return false;
+}
+
+// complejidad: O(n^2)
+template<class T>
+bool Graph<T>::bipartiteGraphR(int num, vector<int> &color, vector<bool> &status) {
+    for(int i = 0; i < adjList[num].size(); i++) { // Similar al de Matrices
+        int pos = findVertex(adjList[num][i].target);
+        if(!status[pos]) {
+            status[pos] = true;
+            if(color[num] == 0) {
+                color[pos] = 1;
+            } else {
+                color[pos] = 0;
+            }
+            
+            if(!bipartiteGraphR(pos, color, status)) {
+                return false;
+            }
+        }
+        else {
+            if(color[pos] == color[num]) {
+                return false;
+            }
+        }
     }
     return true;
 }
