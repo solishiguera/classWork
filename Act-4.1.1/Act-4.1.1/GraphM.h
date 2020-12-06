@@ -9,11 +9,13 @@ private:
     int size; 
     int findVertex(T vertex);
     void dfsR(T vertex, vector<bool> &status);
+    int minWeight(vector<int> weight, vector<bool> status);
 public:
     GraphM(vector< vector<T> > list);
     void print();
     void bfs();
     void dfs();
+    void shortestPath(T vertex);
 };
 
 template<class T>
@@ -55,6 +57,7 @@ GraphM<T>::GraphM(vector< vector<T> > list) {
         int posTarget = findVertex(edge[target]); // Se busca posición destino dentro de vector edge
         adjMatrix[posSource][posTarget] = edge[weight]; // en la posición de matriz posSource,posTarget de agrega peso
     }
+    
 }
 
 template<class T>
@@ -138,6 +141,67 @@ void GraphM<T>::dfsR(T vertex, vector<bool> &status) {
         }
     }
     
+}
+
+/*
+template<class T>
+void GraphM<T>::shortestPath(T vertex) {
+    int pos = findVertex(vertex);
+    
+    if (pos >= 0) {
+        vector<bool> status(size, false);
+        vector<int> weight(size, INT_MAX); // INT_MAX es el infinito
+        vector<int> path(size, -1);
+        weight[pos] = 0;
+        int next = minWeight(weight, status);
+        while (next >= 0) {
+            status[next] = true;
+            for (int a = 0; a < adjMatrix[next].size(); a++) {
+                int posAdj = findVertex(adjMatrix[next][a].target);
+                if (!status[posAdj]) {
+                    if (weight[posAdj] > weight[next] + adjList[next][a].weight) {
+                        weight[posAdj] = weight[next] + adjList[next][a].weight;
+                        path[posAdj] = next;
+                    }
+                }
+            }
+            next = minWeight(weight, status);
+        }
+        
+        for (int v = 0; v < size; v++) {
+            stack<int> sp;
+            sp.push(v);
+            int p = path[v];
+            while (p >= 0) {
+                sp.push(p);
+                p = path[p];
+            }
+            
+            while (!sp.empty()) {
+                cout << vertices[sp.top()] << " ";
+                sp.pop();
+            }
+            
+            cout << "weight: " << weight[v] << endl;
+        }
+    }
+}
+*/
+
+template<class T>
+int GraphM<T>::minWeight(vector<int> weight, vector<bool> status) {
+    //priority_queue <int, vector<int>, greater<int> > pq;
+    int minWeight = INT_MAX;
+    int minVertex = -1;
+    for (int v = 0; v < size; v++) {
+        if (!status[v]) { // Si status en posición v NO es Verdadero
+            if (minWeight > weight[v]) { // Si el minweight es mayor a weight en posición V
+                minWeight = weight[v]; // minweight ahora es igual a weight en posición V
+                minVertex = v; // minVertex ahora es igual a v
+            }
+        }
+    }
+    return minVertex;
 }
 
 

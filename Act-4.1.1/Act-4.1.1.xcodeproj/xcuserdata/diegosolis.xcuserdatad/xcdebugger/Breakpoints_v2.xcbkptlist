@@ -170,8 +170,8 @@
             filePath = "Act-4.1.1/GraphM.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "dfsR(vertex, status)"
             landmarkType = "9">
          </BreakpointContent>
@@ -186,8 +186,8 @@
             filePath = "Act-4.1.1/GraphM.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "print()"
             landmarkType = "9">
          </BreakpointContent>
@@ -202,8 +202,8 @@
             filePath = "Act-4.1.1/GraphM.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "GraphM(list)"
             landmarkType = "9">
             <Locations>
@@ -238,6 +238,193 @@
                   offsetFromSymbolStart = "157">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80743939-295E-453F-BCFC-00E2D6B42B81"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/Graph.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "Graph(list)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "80743939-295E-453F-BCFC-00E2D6B42B81 - c306d86dc6c462a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "572">
+               </Location>
+               <Location
+                  uuid = "80743939-295E-453F-BCFC-00E2D6B42B81 - c306d86dc6c462a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Graph&lt;int&gt;::Graph(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/Graph.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "656">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "200E0353-4476-4642-8C27-B00DDC4922DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/GraphM.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "GraphM(list)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "21">
+               </Location>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "275">
+               </Location>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "287">
+               </Location>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "711">
+               </Location>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1052">
+               </Location>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "200E0353-4476-4642-8C27-B00DDC4922DA - f45bc9532eeef51e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GraphM&lt;int&gt;::GraphM(std::__1::vector&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt; &gt; &gt;)"
+                  moduleName = "Act-4.1.1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegosolis/Documents/TEC/SEMESTRE%203/Estructura%20de%20Datos/classWork/Act-4.1.1/Act-4.1.1/GraphM.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1092">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "837F303F-CF9C-4D62-8EB9-92A88EFA93EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Act-4.1.1/Graph.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "findVertex(vertex)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

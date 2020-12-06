@@ -11,7 +11,7 @@ int main() {
     
     /*
      GIT
-     cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork/Act-4.1.1
+     cd Documents/TEC/"SEMESTRE 3"/"Estructura de datos"/classWork
      */
     
     vector< vector<int> > list;
