@@ -15,7 +15,7 @@ private:
     int qty; // Cantidad de elementos que tengo en la tabla
     vector<int> status; // 0 -> vacío, 1 -> ocupado, 2 -> borrado; 3 edos
     int hashing(string data); //, int &key, int size); // me da índice de tabla
-    int quadTest(int index); // manejo de colsiones
+    int quadTest(int index, int cont); // manejo de colsiones
     int findData(string data); // Si lo encontró o no lo encontró
     bool isFull();
 public:
@@ -43,25 +43,34 @@ HashQ::HashQ(vector<string> list) {
 void HashQ::addData(string data) {
     if(!isFull()) {
         int index = hashing(data); // El index va ser de acuerdo a la llave (Hashing)
-        int newIndex = quadTest(index); // Manejo de colisiones, (prueba cuadrática)
+        int newIndex = quadTest(index, cont); // Manejo de colisiones, (prueba cuadrática)
         table[newIndex] = data; // Guarda dato en casilla de nuevo index
         status[newIndex] = 1; // Poner que ya está llena casilla
         qty++;
     }
 }
 
-int HashQ::quadTest(int index) {
-    if (status[index] != 1) { // Si está vacía o borrada, regreso index
-        return index;
+int HashQ::quadTest(int index, int cont) {
+    /*
+     if (status[index] != 1) { // Si está vacía o borrada, regreso index
+     return index;
+     }
+     
+     int cont = 1;
+     int newIndex = index;
+     while (status[newIndex] == 1) { // Mientras que no sea borrado y vacío
+     newIndex = index + pow(-1, cont - 1) * pow((cont + 1)/ 2, 2); // Revisar si el elemento ya existe <----------- <-----------
+     newIndex %= size;
+     cont++;
+     }
+     */
+    int newIndex;
+    if (index + int(pow(-1, cont - 1)) * int(pow((cont + 1) / 2, 2)) < 0) {
+        newIndex = size - fmod(size - int(pow(-1, cont - 1)) * int(pow((cont + 1) / 2, 2)), size);
+    } else {
+        newIndex = fmod(index + int(pow(-1, cont - 1)) * int(pow((cont + 1) / 2, 2)), size);
     }
-    
-    int cont = 1;
-    int newIndex = index;
-    while (status[newIndex] == 1) { // Mientras que no sea borrado y vacío
-        newIndex = index + pow(-1, cont - 1) * pow((cont + 1)/ 2, 2); // Revisar si el elemento ya existe <----------- <-----------
-        newIndex %= size;
-        cont++;
-    }
+    return newIndex;
     
     return newIndex;
 }
